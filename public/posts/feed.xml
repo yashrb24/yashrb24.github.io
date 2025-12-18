@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+	<title>Blog</title>
+	<subtitle>Blog posts</subtitle>
+	<link rel="self" type="application/atom+xml" href="https://yashrb24.github.io/posts/feed.xml"/>
+  <link rel="alternate" type="text/html" href="https://yashrb24.github.io/posts/"/>
+  
+	<updated>2025-12-16T00:00:00+00:00</updated>
+	
+	<id>https://yashrb24.github.io/posts/feed.xml</id>
+	<entry xml:lang="en">
+		<title>Graphormer: Transformers for Graph-Structured Data</title>
+		<published>2025-12-16T00:00:00+00:00</published>
+		<updated>2025-12-16T00:00:00+00:00</updated>
+		<link rel="alternate" type="text/html" href="https://yashrb24.github.io/posts/graphormer-transformers-for-graphs/"/>
+		<id>https://yashrb24.github.io/posts/graphormer-transformers-for-graphs/</id>
+    
+		<content type="html" xml:base="https://yashrb24.github.io/posts/graphormer-transformers-for-graphs/">&lt;p&gt;Transformers have revolutionized NLP and computer vision, but applying them to graph-structured data presents unique challenges. Unlike sequences or grids, graphs have irregular topology without a natural ordering of nodes.&lt;&#x2F;p&gt;
+&lt;p&gt;Graphormer addresses this by introducing novel structural encodings that capture graph properties within the transformer framework:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Centrality Encoding&lt;&#x2F;strong&gt;: Captures node importance using degree information&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Spatial Encoding&lt;&#x2F;strong&gt;: Encodes pairwise distances between nodes in the attention mechanism&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Edge Encoding&lt;&#x2F;strong&gt;: Incorporates edge features along shortest paths between node pairs&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;These encodings allow the standard transformer architecture to reason about graph structure while leveraging the powerful attention mechanism for learning node representations.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;em&gt;Published as part of the GRAM workshop&#x27;s blogpost track @ ICML.&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>Paper Presentations</title>
+		<published>2025-12-16T00:00:00+00:00</published>
+		<updated>2025-12-16T00:00:00+00:00</updated>
+		<link rel="alternate" type="text/html" href="https://yashrb24.github.io/posts/paper-presentations/"/>
+		<id>https://yashrb24.github.io/posts/paper-presentations/</id>
+    
+		<content type="html" xml:base="https://yashrb24.github.io/posts/paper-presentations/">&lt;p&gt;A collection of presentations I&#x27;ve prepared for paper reading sessions, covering topics in database optimization and machine learning systems.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h3 id=&quot;disp-llm-dimension-independent-structural-pruning-for-large-language-models&quot;&gt;DISP-LLM: Dimension-Independent Structural Pruning for Large Language Models&lt;a class=&quot;zola-anchor&quot; href=&quot;#disp-llm-dimension-independent-structural-pruning-for-large-language-models&quot; aria-label=&quot;Anchor link for: disp-llm-dimension-independent-structural-pruning-for-large-language-models&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;&#x2F;h3&gt;
+&lt;p&gt;A structured pruning approach for LLMs that achieves dimension-independent compression. Covers the DISP framework, pruning strategies, and efficiency-accuracy tradeoffs.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;&#x2F;papers&#x2F;disp-llm.pdf&quot;&gt;Download Slides (PDF)&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h3 id=&quot;optimizing-queries-using-materialized-views&quot;&gt;Optimizing Queries Using Materialized Views&lt;a class=&quot;zola-anchor&quot; href=&quot;#optimizing-queries-using-materialized-views&quot; aria-label=&quot;Anchor link for: optimizing-queries-using-materialized-views&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;&#x2F;h3&gt;
+&lt;p&gt;A practical, scalable solution for query optimization using materialized views. Covers view matching algorithms, cost-based optimization, and real-world implementation considerations.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;&#x2F;papers&#x2F;materialized-views.pdf&quot;&gt;Download Slides (PDF)&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h3 id=&quot;cache-efficient-top-k-aggregation&quot;&gt;Cache-Efficient Top-k Aggregation&lt;a class=&quot;zola-anchor&quot; href=&quot;#cache-efficient-top-k-aggregation&quot; aria-label=&quot;Anchor link for: cache-efficient-top-k-aggregation&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;&#x2F;h3&gt;
+&lt;p&gt;Techniques for efficient top-k aggregation over high cardinality datasets. Explores cache-aware algorithms, memory hierarchy optimization, and performance benchmarks.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;&#x2F;papers&#x2F;cache-efficient-topk.pdf&quot;&gt;Download Slides (PDF)&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>German Strings for Faster Analytics</title>
+		<published>2025-12-14T00:00:00+00:00</published>
+		<updated>2025-12-14T00:00:00+00:00</updated>
+		<link rel="alternate" type="text/html" href="https://yashrb24.github.io/posts/german-strings-faster-analytics/"/>
+		<id>https://yashrb24.github.io/posts/german-strings-faster-analytics/</id>
+    
+		<content type="html" xml:base="https://yashrb24.github.io/posts/german-strings-faster-analytics/">&lt;p&gt;String handling is a significant performance bottleneck in analytical databases. Traditional approaches store strings as pointers to heap-allocated memory, causing cache misses and memory indirection overhead during scans and comparisons.&lt;&#x2F;p&gt;
+&lt;p&gt;In this article, I explore &quot;German strings&quot; - an optimization technique used by modern analytical databases like DuckDB. The key insight is storing a prefix of the string inline within the pointer structure itself, enabling:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Fast prefix comparisons&lt;&#x2F;strong&gt; without dereferencing pointers&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Better cache utilization&lt;&#x2F;strong&gt; by keeping frequently-accessed data together&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Reduced memory indirection&lt;&#x2F;strong&gt; for short strings that fit entirely inline&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;The technique gets its name from the Umbra database system developed in Germany, which pioneered this approach.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;em&gt;Originally published on the e6data engineering blog.&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+</content>
+	</entry>
+</feed>

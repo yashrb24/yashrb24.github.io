@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  
+  
+    
+  
+  <meta name="description" content="Professional experience">
+
+  <title>experience</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="https://yashrb24.github.io/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://yashrb24.github.io/img/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://yashrb24.github.io/img/apple-touch-icon.png">
+  
+  <style>
+
+  /* light mode colors */
+  body {
+    --primary-color: #5871a2;
+    --primary-pale-color: #5871a233;
+    --primary-decoration-color: #5871a210;
+    --bg-color: #ffffff;
+    --text-color: #2f3030;
+    --text-pale-color: #767676;
+    --text-decoration-color: #a9a9a9;
+    --highlight-mark-color: #5f75b020;
+
+    --callout-note-color: #5871a2;
+    --callout-tip-color: #268556;
+    --callout-important-color: #885fc9;
+    --callout-warning-color: #ab6632;
+    --callout-caution-color: #c64e4e;
+  }
+
+  /* dark mode colors */
+  body.dark {
+    --primary-color: #6f8fd1;
+    --primary-pale-color: #6f8fd166;
+    --primary-decoration-color: #6f8fd112;
+    --bg-color: #1c1c1c;
+    --text-color: #c1c1c1;
+    --text-pale-color: #848484;
+    --text-decoration-color: #5f5f5f;
+    --highlight-mark-color: #8296cb3b;
+
+    --callout-note-color: #6f8fd1;
+    --callout-tip-color: #47976f;
+    --callout-important-color: #9776cd;
+    --callout-warning-color: #ad7a52;
+    --callout-caution-color: #d06161;
+  }
+
+  /* typography */
+  body {
+    --main-font: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --code-font: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    --homepage-max-width: 768px;
+    --main-max-width: 768px;
+    --avatar-size: 120px;
+    --font-size: 14px;
+    --line-height: 1.75;
+    --img-border-radius: 0px;
+    --detail-border-radius: 0px;
+    --dark-mode-img-brightness: 0.75;
+    --dark-mode-chart-brightness: 0.75;
+    --inline-code-border-radius: 2px;
+    --inline-code-bg-color: var(--primary-decoration-color);
+    --block-code-border-radius: 0px;
+    --block-code-border-color: var(--primary-color);
+    --detail-border-color: var(--primary-color);
+  }
+
+  /* Override avatar to be rectangular with original dimensions */
+  body.homepage #info img {
+    border-radius: 0 !important;
+    width: auto !important;
+    height: auto !important;
+    max-height: 250px !important;
+    object-fit: contain !important;
+  }
+
+  /* Updates section styling */
+  #updates {
+    margin-top: 2em;
+  }
+
+  #updates h3 {
+    margin-bottom: 0.75em;
+    font-size: 1rem;
+    color: var(--text-pale-color);
+  }
+
+  .updates-container {
+    max-height: 180px;
+    overflow-y: auto;
+    padding-right: 10px;
+  }
+
+  .update-item {
+    display: flex;
+    gap: 1em;
+    padding: 0.5em 0;
+    border-bottom: 1px solid var(--text-decoration-color);
+  }
+
+  .update-item:last-child {
+    border-bottom: none;
+  }
+
+  .update-date {
+    color: var(--text-pale-color);
+    font-size: 0.9em;
+    white-space: nowrap;
+  }
+
+  .update-text {
+    color: var(--text-color);
+  }
+
+  /* Custom scrollbar styling */
+  .updates-container::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .updates-container::-webkit-scrollbar-track {
+    background: var(--bg-color);
+  }
+
+  .updates-container::-webkit-scrollbar-thumb {
+    background: var(--text-decoration-color);
+    border-radius: 2px;
+  }
+
+  /* Projects section - stacked layout (image above text) */
+  .collection.art {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .collection.art .img-wrapper {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .collection.art .img-wrapper img {
+    width: auto !important;
+    height: auto !important;
+    max-height: 280px;
+    object-fit: contain;
+  }
+
+  .collection.art .text {
+    width: 100%;
+    height: auto !important;
+  }
+
+  .collection.art .content {
+    -webkit-line-clamp: unset !important;
+    display: block !important;
+    overflow: visible !important;
+  }
+
+  /* Separator lines between project cards */
+  .collection.art,
+  .collection.card {
+    border-bottom: 1px solid var(--text-decoration-color) !important;
+    padding-bottom: 3em !important;
+    margin-bottom: 2em;
+  }
+
+  /* Remove separator from last card */
+  section.collection-wrapper > .collection:last-child {
+    border-bottom: none !important;
+    margin-bottom: 0;
+  }
+
+  /* Experience section - larger icons with stacked title/date */
+  .collection.card .meta {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    gap: 0;
+    align-items: start;
+  }
+
+  /* When icon is present, use two-column layout */
+  .collection.card .meta:has(.icon-wrapper) {
+    grid-template-columns: 48px 1fr;
+    gap: 0 0.75em;
+  }
+
+  .collection.card .meta .icon-wrapper {
+    grid-row: span 2;
+    height: auto;
+    align-self: center;
+  }
+
+  .collection.card .meta .icon {
+    width: 48px !important;
+    height: 48px !important;
+    object-fit: contain;
+  }
+
+  .collection.card .meta:has(.icon-wrapper) .title {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .collection.card .meta:has(.icon-wrapper) .date {
+    grid-column: 2;
+    grid-row: 2;
+    margin-left: 0;
+  }
+
+  /* Without icon, keep simple stacked layout */
+  .collection.card .meta:not(:has(.icon-wrapper)) .date {
+    margin-left: 0;
+  }
+
+  /* Bio line breaks */
+  #bio {
+    white-space: pre-line;
+  }
+
+  /* Landing page name styling */
+  body.homepage #name {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+
+  /* Hide dates from blog posts */
+  .post-list .date,
+  #post-info #date {
+    display: none;
+  }
+
+  /* ===== Accordion Blog List Styles ===== */
+
+  /* Accordion container */
+  .post-list.accordion-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  /* Each accordion item */
+  .post-accordion {
+    border-bottom: 1px solid var(--text-decoration-color);
+    padding: 1.25em 0;
+  }
+
+  .post-accordion:last-child {
+    border-bottom: none;
+  }
+
+  /* Remove default marker */
+  .post-accordion summary {
+    list-style: none;
+    cursor: pointer;
+  }
+
+  .post-accordion summary::-webkit-details-marker {
+    display: none;
+  }
+
+  /* Header (collapsed state) */
+  .post-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4em;
+  }
+
+  .post-header:hover .post-title {
+    color: var(--primary-color);
+  }
+
+  /* Title */
+  .post-title {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-color);
+    transition: color 0.2s ease;
+  }
+
+  /* Description */
+  .post-description {
+    font-size: 0.95rem;
+    color: var(--text-pale-color);
+    line-height: 1.5;
+  }
+
+  /* Tags */
+  .post-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    margin-top: 0.25em;
+  }
+
+  .post-tags .tag {
+    font-size: 0.85rem;
+    color: var(--primary-color);
+  }
+
+  /* Expanded content */
+  .post-accordion .post-content {
+    margin-top: 1.5em;
+    padding-left: 1em;
+    border-left: 2px solid var(--primary-pale-color);
+  }
+
+  /* Read more link */
+  .read-more {
+    margin-top: 1.5em;
+  }
+
+  .read-more a {
+    color: var(--primary-color);
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  .read-more a:hover {
+    text-decoration: underline;
+  }
+
+  .external-icon {
+    font-size: 0.9em;
+    margin-left: 0.25em;
+  }
+
+  /* Open state indicator */
+  .post-accordion[open] .post-title {
+    color: var(--primary-color);
+  }
+
+  /* Featured post styling */
+  .post-accordion.featured .post-title::before {
+    content: "* ";
+    color: var(--primary-color);
+  }
+
+</style>
+
+  <link rel="stylesheet" href="https://yashrb24.github.io/main.css">
+  
+
+<link id="hl" rel="stylesheet" type="text/css" href="/hl-light.css" />
+
+
+
+  <style>
+  /* About section - constrain figure images */
+  figure {
+    max-width: 500px;
+  }
+  figure img {
+    width: 100%;
+    height: auto;
+  }
+</style>
+
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "pghpc1ft3o");
+</script>
+
+</head>
+
+<body class="prose-page">
+  
+  <script>
+    const theme = sessionStorage.getItem('theme');
+    const match = window.matchMedia("(prefers-color-scheme: dark)").matches
+    if ((theme && theme == 'dark') || (!theme && match)) {
+      document.body.classList.add('dark');
+      const hl = document.querySelector('link#hl');
+      if (hl) hl.href = 'https://yashrb24.github.io/hl-dark.css';
+    }
+  </script>
+  
+  
+<div id="wrapper">
+  <main>
+    
+<header>
+  <nav>
+    <a id="back-link" href="https:&#x2F;&#x2F;yashrb24.github.io">← back</a>
+  </nav>
+</header>
+
+    
+<div class="section-title">
+  
+  <h1>experience</h1>
+  
+  
+  <p>Professional journey</p>
+  
+</div>
+
+
+    <div>
+      
+      <article class="prose">
+        
+
+<section class="collection-wrapper">
+
+  
+    
+<blockquote class="collection card">
+  <div class="meta">
+    
+    <div class="icon-wrapper">
+      <img class="icon no-lightense" src="&#x2F;img&#x2F;e6data.svg" alt="icon" width="16" height="16">
+    </div>
+    
+    
+    <div class="title">Performance and Research Engineer @ e6data</div>
+    
+    
+    <div class="date">Jan 2025 - Present</div>
+    
+  </div>
+  
+  <div class="content"><p>Working in the core query engine team. Making algorithmic improvements for better memory efficiency and CPU utilization to enable faster SQL query execution.</p>
+</div>
+  
+</blockquote>
+
+  
+
+  
+    
+<blockquote class="collection card">
+  <div class="meta">
+    
+    <div class="icon-wrapper">
+      <img class="icon no-lightense" src="&#x2F;img&#x2F;saidl.png" alt="icon" width="16" height="16">
+    </div>
+    
+    
+    <div class="title">Vice President @ Society for AI and Deep Learning</div>
+    
+    
+    <div class="date">Aug 2024 - Jul 2025</div>
+    
+  </div>
+  
+  <div class="content"><p>Organized a <a rel="nofollow noreferrer" href="https://sites.google.com/goa.bits-pilani.ac.in/ai-symposium-2024/home">symposium</a>, conducted courses, undertook research projects, hosted paper-reading sessions and hackathons.</p>
+</div>
+  
+</blockquote>
+
+  
+
+  
+    
+<blockquote class="collection card">
+  <div class="meta">
+    
+    <div class="icon-wrapper">
+      <img class="icon no-lightense" src="&#x2F;img&#x2F;tud.jpeg" alt="icon" width="16" height="16">
+    </div>
+    
+    
+    <div class="title">Summer Intern @ Technische Universität Dresden</div>
+    
+    
+    <div class="date">May 2024 - Feb 2025</div>
+    
+  </div>
+  
+  <div class="content"><p>State-space models for neuromorphic event streams and point-cloud data. Work accepted at <a rel="nofollow noreferrer" href="https://arxiv.org/abs/2411.12603">NeVI @ ICCV'25</a>.</p>
+</div>
+  
+</blockquote>
+
+  
+
+  
+    
+<blockquote class="collection card">
+  <div class="meta">
+    
+    <div class="icon-wrapper">
+      <img class="icon no-lightense" src="&#x2F;img&#x2F;senselab.png" alt="icon" width="16" height="16">
+    </div>
+    
+    
+    <div class="title">Undergraduate Research Assistant @ SenseLab</div>
+    
+    
+    <div class="date">Aug 2024 - Dec 2024</div>
+    
+  </div>
+  
+  <div class="content"><p>Detecting user habits using CSI measurements from WiFi devices. Runner-up for best paper in WiP track at PERCOM'25.</p>
+</div>
+  
+</blockquote>
+
+  
+
+  
+    
+<blockquote class="collection card">
+  <div class="meta">
+    
+    <div class="icon-wrapper">
+      <img class="icon no-lightense" src="&#x2F;img&#x2F;dashlab.png" alt="icon" width="16" height="16">
+    </div>
+    
+    
+    <div class="title">Undergraduate Researcher @ DaSH Lab</div>
+    
+    
+    <div class="date">Apr 2023 - Dec 2024</div>
+    
+  </div>
+  
+  <div class="content"><p>Designing a cluster-aware file-level adaptive striping framework for parallel file-systems (BeeGFS). Published at <a rel="nofollow noreferrer" href="https://ieeexplore.ieee.org/abstract/document/10321840/">IEEE CLUSTER'23</a>.</p>
+</div>
+  
+</blockquote>
+
+  
+
+  
+    
+<blockquote class="collection card">
+  <div class="meta">
+    
+    <div class="icon-wrapper">
+      <img class="icon no-lightense" src="&#x2F;img&#x2F;kratos.png" alt="icon" width="16" height="16">
+    </div>
+    
+    
+    <div class="title">Core Member, Software Team @ Project Kratos</div>
+    
+    
+    <div class="date">Jun 2022 - Apr 2024</div>
+    
+  </div>
+  
+  <div class="content"><p>Implemented a visual servoing algorithm using a custom-trained YOLO as the object detector, integrated PID-based GPS navigation with the rover's tech stack. 2nd Place in Autonomous Task at IRC'24. <a rel="nofollow noreferrer" href="https://kratos-the-rover.github.io/">Project website</a>.</p>
+</div>
+  
+</blockquote>
+
+  
+
+  
+    
+<blockquote class="collection card">
+  <div class="meta">
+    
+    <div class="icon-wrapper">
+      <img class="icon no-lightense" src="&#x2F;img&#x2F;appcair.png" alt="icon" width="16" height="16">
+    </div>
+    
+    
+    <div class="title">Undergraduate Researcher @ APPCAIR</div>
+    
+    
+    <div class="date">May 2023 - Dec 2023</div>
+    
+  </div>
+  
+  <div class="content"><p>Explored causal neural network pruning strategies that preserve feature importances, compared against L0, L1, Rank-based and Learning-Compression Algorithms. <a rel="nofollow noreferrer" href="https://github.com/yashrb24/granger-causality-pruning">Code</a>.</p>
+</div>
+  
+</blockquote>
+
+  
+
+  
+    
+<blockquote class="collection card">
+  <div class="meta">
+    
+    <div class="icon-wrapper">
+      <img class="icon no-lightense" src="&#x2F;img&#x2F;isro.png" alt="icon" width="16" height="16">
+    </div>
+    
+    
+    <div class="title">Summer Intern @ NESAC</div>
+    
+    
+    <div class="date">May 2023 - Aug 2023</div>
+    
+  </div>
+  
+  <div class="content"><p>Used UNets and LSTMs for rainfall prediction using satellite data. Experimented with genetic algorithms to compare model performance against gradient-descent based optimisers. Work accepted as a poster at IGARSS'24.</p>
+</div>
+  
+</blockquote>
+
+  
+
+</section>
+
+      </article>
+
+      
+      
+
+      
+    </div>
+
+    
+
+
+<footer>
+  <div class="left">
+    <div class="copyright">
+      Yash Bhisikar
+      
+    </div>
+  </div>
+
+  <div class="right">
+    
+
+    
+    
+    
+    <button id="theme-toggle" aria-label="theme switch">
+      <span class="moon-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M10 7C10 10.866 13.134 14 17 14C18.9584 14 20.729 13.1957 21.9995 11.8995C22 11.933 22 11.9665 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C12.0335 2 12.067 2 12.1005 2.00049C10.8043 3.27098 10 5.04157 10 7ZM4 12C4 16.4183 7.58172 20 12 20C15.0583 20 17.7158 18.2839 19.062 15.7621C18.3945 15.9187 17.7035 16 17 16C12.0294 16 8 11.9706 8 7C8 6.29648 8.08133 5.60547 8.2379 4.938C5.71611 6.28423 4 8.9417 4 12Z" fill="currentColor"></path></svg>
+</span>
+      <span class="sun-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6C15.3137 6 18 8.68629 18 12C18 15.3137 15.3137 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16ZM11 1H13V4H11V1ZM11 20H13V23H11V20ZM3.51472 4.92893L4.92893 3.51472L7.05025 5.63604L5.63604 7.05025L3.51472 4.92893ZM16.9497 18.364L18.364 16.9497L20.4853 19.0711L19.0711 20.4853L16.9497 18.364ZM19.0711 3.51472L20.4853 4.92893L18.364 7.05025L16.9497 5.63604L19.0711 3.51472ZM5.63604 16.9497L7.05025 18.364L4.92893 20.4853L3.51472 19.0711L5.63604 16.9497ZM23 11V13H20V11H23ZM4 11V13H1V11H4Z" fill="currentColor"></path></svg>
+</span>
+    </button>
+    
+  </div>
+</footer>
+
+
+
+  </main>
+</div>
+
+  
+<script src="/js/lightense.min.js"></script>
+
+
+  <script src="https://yashrb24.github.io/js/main.js"></script>
+</body>
+
+</html>

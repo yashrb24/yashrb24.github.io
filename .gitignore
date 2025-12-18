@@ -1,6 +1,3 @@
-# Build output
-public/
-
 # Claude Code and Serena (local only)
 .claude/
 .serena/

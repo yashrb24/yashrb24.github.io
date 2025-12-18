@@ -1,0 +1,41 @@
+[[collection]]
+type = "card"
+title = "Learning what to say and how precisely: Efficient Communication via Differentiable Discrete Communication Learning"
+date = "2025"
+link = "https://arxiv.org/abs/2511.01554"
+content = "Aditya Kapoor, <strong>Yash Bhisikar</strong>, Benjamin Freed, Jan Peters, Mingfei Sun<br><br>Effective communication in Multi-Agent Reinforcement Learning (MARL) is bottlenecked by bandwidth constraints, yet standard approaches use inefficient fixed-precision vectors. We address this by developing a universal plug-and-play layer enabling agents to dynamically learn what to communicate and at what precision. Our method uses stochastic quantization with a reparameterization trick to pass gradients through discrete channels, employing a novel differentiable loss that bounds expected message length for unbounded signals. Agents naturally emerge with frequency-aware coding schemes—allocating fewer bits to common observations—effectively learning lossless compression akin to optimal coding theory. Across diverse benchmarks, our framework reduced bandwidth by one to five orders of magnitude—up to 45,000× in Traffic Junction—while boosting success rates by over 467% in complex tasks like Google Research Football. We demonstrate the \"Bitter Lesson\" in MARL: simple scalable architectures using general mechanisms outperform specialized communication architectures.<br><br><em>Under review at ICLR 2026</em>"
+
+[[collection]]
+type = "card"
+title = "STREAM: A Universal State-Space Model for Sparse Geometric Data"
+date = "2025"
+link = "https://arxiv.org/abs/2411.12603"
+content = "Mark Schöne†, <strong>Yash Bhisikar</strong>†, Karan Bania†, Khaleelulla Khan Nazeer, Christian Mayr, Anand Subramoney, David Kappel († equal contribution)<br><br>Traditional methods for processing sparse geometric data—such as point clouds from LiDAR sensors and event streams from neuromorphic cameras—either ignore the irregular spacing of coordinates or require computationally expensive pairwise operations (O(N²) complexity). By injecting the relative coordinate differences (Δₖ = tₖ - tₖ₋₁) directly into the Mamba SSM's step-size parameter, our model learns an exponentially-weighted interaction kernel that captures geometric structure. This formulation computes all N pairwise interactions in O(N) sequential steps or O(log N) parallel steps using the associative Scan primitive, avoiding both the quadratic complexity of transformers and the implicit spatial reasoning of prior SSM approaches. For event-based vision, it reaches 100% accuracy on all 11 classes of the DVS128-Gestures dataset—a first for any method—and 86.3% on Spiking Speech Commands. We also achieve roughly ~2% consistent improvements over the vanilla Mamba models on point-cloud benchmarks, demonstrating that explicit geometric encoding provides a powerful inductive bias across spatio-temporal sparse data modalities.<br><br><em>Accepted at NeVI Workshop @ ICCV 2025</em>"
+
+[[collection]]
+type = "card"
+title = "SandDune: Single ANtenna Device for Detecting User's Natural Eating Habits"
+date = "2025"
+link = "https://www.computer.org/csdl/proceedings-article/percom-workshops/2025/355300a689/27FQVKJIKqc"
+content = "Shreyans Jain, <strong>Yash Bhisikar</strong>, Surjya Ghosh, Timothy Pierson, Sougata Sen<br><br>Low-cost framework using single-antenna WiFi CSI measurements to monitor eating habits.<br><br><em>IEEE PerCom 2025 (Work-in-Progress) - Runner up for Best Paper</em>"
+
+[[collection]]
+type = "card"
+title = "CountCLIP -- [Re] Teaching CLIP to Count to Ten"
+date = "2024"
+link = "https://arxiv.org/abs/2406.03586"
+content = "Harshvardhan Mestha, Tejas Agrawal, Karan Bania, Shreyas V, <strong>Yash Bhisikar</strong><br><br>Reproducibility study improving CLIP's counting ability with lower computational resources on a smaller training subset.<br><br><em>Under review at ReScience C</em>"
+
+[[collection]]
+type = "card"
+title = "Gradient-Based Optimisers Versus Genetic Algorithms in Deep Learning Architectures: A Case Study on Rainfall Estimation Over Complex Terrain"
+date = "2024"
+link = "https://doi.org/10.5194/egusphere-egu24-19531"
+content = "<strong>Yash Bhisikar</strong>†, Nirmal Govindaraj†, Venkatavihan Devaki†, Ritu Anilkumar († equal contribution)<br><br>Compares genetic algorithms vs gradient-based optimizers for rainfall prediction over North-East India using U-Net architectures.<br><br><em>EGU General Assembly 2024</em>"
+
+[[collection]]
+type = "card"
+title = "Does Varying BeeGFS Configuration Affect the I/O Performance of HPC Workloads?"
+date = "2023"
+link = "https://ieeexplore.ieee.org/abstract/document/10321840/"
+content = "Arnav Borkar, Joel Tony, Hari Vamsi K. N, Tushar Barman, <strong>Yash Bhisikar</strong>, Sreenath T. M., Arnab K. Paul<br><br>Analyzes I/O performance of different workloads for various BeeGFS configurations, showing default settings lead to imbalanced data distribution.<br><br><em>IEEE CLUSTER Workshops 2023</em>"
