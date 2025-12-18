@@ -1,3 +1,6 @@
+# Build output (built by GitHub Actions)
+public/
+
 # Claude Code and Serena (local only)
 .claude/
 .serena/
