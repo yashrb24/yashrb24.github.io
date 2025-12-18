@@ -1,0 +1,15 @@
+# Build output
+public/
+
+# Claude Code and Serena (local only)
+.claude/
+.serena/
+
+# Editor
+.DS_Store
+*.swp
+*.swo
+
+# IDE
+.idea/
+.vscode/

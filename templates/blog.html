@@ -1,0 +1,53 @@
+{% import "macros/prose.html" as macros %}
+{% extends "_base.html" %}
+
+{% block page %}blog{% endblock page%}
+{% block lang %}{% if section.extra.lang %}{{ section.extra.lang }}{% else %}{{ section.lang }}{% endif %}{% endblock lang %}
+{% block title %}{{ section.title }}{% endblock title %}
+{% block desc %}
+  {% if section.description %}
+    {% set desc = section.description %}
+  {% else %}
+    {% set desc = config.description %}
+  {% endif %}
+  <meta name="description" content="{{ desc }}">
+{% endblock desc %}
+
+{% block content %}
+<div id="wrapper">
+  {{ macros::back_link(path = get_url(path="/")) }}
+  {% include "_section_title.html" %}
+  <main class="layout-list">
+    <div class="post-list accordion-list">
+      {% for post in section.pages %}
+      <details class="post-accordion {% if post.extra.featured %}featured{% endif %}">
+        <summary class="post-header">
+          <span class="post-title">{{ post.title }}</span>
+          {% if post.description %}
+          <span class="post-description">{{ post.description }}</span>
+          {% endif %}
+          {% if post.taxonomies.tags %}
+          <span class="post-tags">
+            {% for tag in post.taxonomies.tags %}
+            <span class="tag">#{{ tag }}</span>
+            {% endfor %}
+          </span>
+          {% endif %}
+        </summary>
+        <div class="post-content prose">
+          {{ post.content | safe }}
+          {% if post.extra.external_url %}
+          <div class="read-more">
+            <a href="{{ post.extra.external_url }}" target="_blank" rel="noopener noreferrer">
+              Read full article <span class="external-icon">&#8599;</span>
+            </a>
+          </div>
+          {% endif %}
+        </div>
+      </details>
+      {% endfor %}
+    </div>
+  </main>
+  {% include "_footer.html" %}
+</div>
+{% endblock content %}
