@@ -4,6 +4,7 @@ public/
 # Claude Code and Serena (local only)
 .claude/
 .serena/
+CLAUDE.md
 
 # Editor
 .DS_Store
