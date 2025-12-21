@@ -35,3 +35,13 @@ img = "/img/kratos.jpg"
 content = """
 Developed a monocular visual servoing system for autonomous navigation using a custom trained YOLOv3 for object detection. Used A* algorithm to determine the path to the target location using depth heatmaps from Zed2i camera. Implemented a PID-controlled GPS navigation system using RTK, enabling precise rover traversal between nearby local coordinates. We stood second in the Autonomous task at International Rover Challenge 2023!
 """
+
+[[collection]]
+type = "art"
+title = "RSPNBench: An Unofficial Implementation of Relational Sum Product Networks"
+subtitle = "Paper Implementation"
+link = "https://github.com/eigengravy/RSPNBench"
+img = "/img/rspn.jpeg"
+content = """
+RSPNBench is a deep dive into making database query optimization smarter using tractable probabilistic models. Instead of relying on basic, often-inaccurate histograms, I implemented RSPNs from scratch in C++ and Java. It uses Randomized Dependence Coefficients (RDC) to sniff out non-linear correlations between columns and then recursively breaks the data down using K-Means++ clustering. Under the hood, it’s a hierarchical tree of Sum and Product nodes that can handle complex range queries and cardinality estimation in O(height of tree) time. Got to play around with the Eigen library (C++) for the numerical algorithms 
+"""
