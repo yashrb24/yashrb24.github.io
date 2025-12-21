@@ -2,7 +2,7 @@
 # docs: https://github.com/isunjn/serene/blob/latest/USAGE.md
 
 base_url = "https://yashrb24.github.io"
-title = "Yash Bhisikar"
+title = "Yash's website"
 description = "Personal website and blog"
 default_language = "en"
 theme = "serene"
