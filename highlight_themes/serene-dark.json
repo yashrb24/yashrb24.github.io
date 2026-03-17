@@ -1,0 +1,163 @@
+{
+  "name": "Tomorrow Night",
+  "colors": {
+    "editor.background": "#1D1F21",
+    "editor.foreground": "#C5C8C6",
+    "editor.selectionBackground": "#373B41",
+    "editor.lineHighlightBackground": "#282A2E"
+  },
+  "tokenColors": [
+    {
+      "name": "Comment",
+      "scope": "comment, string.quoted.double.block.python",
+      "settings": {
+        "foreground": "#999999"
+      }
+    },
+    {
+      "name": "Foreground",
+      "scope": "keyword.operator.class, constant.other, source.php.embedded.line",
+      "settings": {
+        "fontStyle": "",
+        "foreground": "#CED1CF"
+      }
+    },
+    {
+      "name": "Variable, String Link, Regular Expression, Tag Name",
+      "scope": "variable, support.other.variable, string.other.link, string.regexp, entity.name.tag, entity.other.attribute-name, meta.tag, declaration.tag",
+      "settings": {
+        "foreground": "#A67878"
+      }
+    },
+    {
+      "name": "Number, Constant, Function Argument, Tag Attribute, Embedded",
+      "scope": "constant.numeric, constant.language, support.constant, constant.character, variable.parameter, punctuation.section.embedded, keyword.other.unit",
+      "settings": {
+        "fontStyle": "",
+        "foreground": "#E08355"
+      }
+    },
+    {
+      "name": "Class, Support",
+      "scope": "type,\nentity.name.class, entity.name.type.class, support.type, support.class",
+      "settings": {
+        "fontStyle": "",
+        "foreground": "#83aaa5"
+      }
+    },
+    {
+      "name": "String, Symbols, Inherited Class, Markup Heading",
+      "scope": "string, constant.other.symbol, entity.other.inherited-class, markup.heading",
+      "settings": {
+        "fontStyle": "",
+        "foreground": "#85AD74"
+      }
+    },
+    {
+      "name": "Operator, Misc",
+      "scope": "keyword.operator, constant.other.color",
+      "settings": {
+        "foreground": "#83aaa5"
+      }
+    },
+    {
+      "name": "Function, Special Method, Block Level",
+      "scope": "entity.name.function, meta.function-call, support.function, keyword.other.special-method, meta.block-level",
+      "settings": {
+        "fontStyle": "",
+        "foreground": "#81A2BE"
+      }
+    },
+    {
+      "name": "Keyword, Storage",
+      "scope": "keyword, storage, storage.type, entity.name.tag.css",
+      "settings": {
+        "fontStyle": "",
+        "foreground": "#B294BB"
+      }
+    },
+    {
+      "name": "Invalid",
+      "scope": "invalid",
+      "settings": {
+        "background": "#DF5F5F",
+        "fontStyle": "",
+        "foreground": "#CED2CF"
+      }
+    },
+    {
+      "name": "Separator",
+      "scope": "meta.separator",
+      "settings": {
+        "background": "#82A3BF",
+        "foreground": "#CED2CF"
+      }
+    },
+    {
+      "name": "Deprecated",
+      "scope": "invalid.deprecated",
+      "settings": {
+        "background": "#B798BF",
+        "fontStyle": "",
+        "foreground": "#CED2CF"
+      }
+    },
+    {
+      "name": "Diff foreground",
+      "scope": "markup.inserted.diff, markup.deleted.diff, meta.diff.header.to-file, meta.diff.header.from-file",
+      "settings": {
+        "foreground": "#FFFFFF"
+      }
+    },
+    {
+      "name": "Diff insertion",
+      "scope": "markup.inserted.diff, meta.diff.header.to-file",
+      "settings": {
+        "foreground": "#4baf5c"
+      }
+    },
+    {
+      "name": "Diff deletion",
+      "scope": "markup.deleted.diff, meta.diff.header.from-file",
+      "settings": {
+        "foreground": "#D46565"
+      }
+    },
+    {
+      "name": "Diff header",
+      "scope": "meta.diff.header.from-file, meta.diff.header.to-file",
+      "settings": {
+        "foreground": "#4271ae"
+      }
+    },
+    {
+      "name": "Diff range",
+      "scope": "meta.diff.range",
+      "settings": {
+        "fontStyle": "italic",
+        "foreground": "#3e999f"
+      }
+    },
+    {
+      "name": "diff.deleted",
+      "scope": "markup.deleted",
+      "settings": {
+        "foreground": "#F92672"
+      }
+    },
+    {
+      "name": "diff.inserted",
+      "scope": "markup.inserted",
+      "settings": {
+        "foreground": "#A6E22E"
+      }
+    },
+    {
+      "name": "diff.changed",
+      "scope": "markup.changed",
+      "settings": {
+        "foreground": "#967EFB"
+      }
+    }
+  ]
+}

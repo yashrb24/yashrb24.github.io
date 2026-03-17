@@ -1,6 +1,6 @@
 +++
-title = "Blog"
-description = "Blog posts"
+title = "et cetera"
+description = "et cetera"
 sort_by = "date"
 template = "blog.html"
 page_template = "post.html"
@@ -9,8 +9,8 @@ generate_feeds = true
 
 [extra]
 lang = "en"
-title = "blog"
-subtitle = "some random stuff I've written about"
+title = "et cetera"
+subtitle = "stuff I've written about or been tinkering with"
 date_format = "%b %-d, %Y"
 categorized = false
 back_to_top = true
