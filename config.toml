@@ -34,11 +34,11 @@ anchors = "on"
 
 [extra]
 sections = [
-  { name = "about", path = "/about", is_external = false },
-  { name = "experience", path = "/experience", is_external = false },
-  { name = "projects", path = "/projects", is_external = false },
-  { name = "publications", path = "/publications", is_external = false },
-  { name = "et cetera", path = "/posts", is_external = false },
+  { name = "More about me", path = "/about", is_external = false, desc = "background & contact" },
+  { name = "Experience", path = "/experience", is_external = false, desc = "roles & research internships" },
+  { name = "Projects", path = "/projects", is_external = false, desc = "systems & ML I've built" },
+  { name = "Publications", path = "/publications", is_external = false, desc = "papers & preprints" },
+  { name = "Et cetera", path = "/posts", is_external = false, desc = "writing & notes" },
 ]
 blog_section_path = "/posts"
 

@@ -17,3 +17,50 @@
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "pghpc1ft3o");
 </script>
+
+<!-- Pin the existing theme toggle to the top-right so it follows scrolling.
+     Moving the node keeps its click listener and the theme's icon-swap CSS. -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var btn = document.getElementById("theme-toggle");
+        if (!btn) return;
+        var bar = document.createElement("div");
+        bar.id = "pinned-theme-toggle";
+        document.body.appendChild(bar);
+        bar.appendChild(btn);
+    });
+</script>
+
+<!-- Scrollspy: mark the TOC entry for the section currently in view. -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var links = Array.prototype.slice.call(document.querySelectorAll("aside nav a"));
+        if (!links.length) return;
+        var items = links.map(function (link) {
+            var id = decodeURIComponent((link.hash || "").slice(1));
+            return { link: link, el: id ? document.getElementById(id) : null };
+        }).filter(function (it) { return it.el; });
+        if (!items.length) return;
+
+        var current = null;
+        function onScroll() {
+            var offset = 100; // trigger line, px from top of viewport
+            var active = items[0];
+            for (var i = 0; i < items.length; i++) {
+                if (items[i].el.getBoundingClientRect().top - offset <= 0) {
+                    active = items[i];
+                } else {
+                    break;
+                }
+            }
+            if (active.link !== current) {
+                items.forEach(function (it) { it.link.classList.remove("active"); });
+                active.link.classList.add("active");
+                current = active.link;
+            }
+        }
+        window.addEventListener("scroll", onScroll, { passive: true });
+        window.addEventListener("resize", onScroll);
+        onScroll();
+    });
+</script>

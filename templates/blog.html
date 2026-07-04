@@ -20,6 +20,7 @@
   <main class="layout-list">
     <div class="post-list accordion-list">
       {% for post in section.pages %}
+      {% if post.extra.external_url %}
       <details class="post-accordion {% if post.extra.featured %}featured{% endif %}">
         <summary class="post-header">
           <span class="post-title">{{ post.title }}</span>
@@ -36,15 +37,30 @@
         </summary>
         <div class="post-content prose">
           {{ post.content | safe }}
-          {% if post.extra.external_url %}
           <div class="read-more">
             <a href="{{ post.extra.external_url }}" target="_blank" rel="noopener noreferrer">
-              Read full article <span class="external-icon">&#8599;</span>
+              {{ post.extra.link_text | default(value="Read full article") }} <span class="external-icon">&#8599;</span>
             </a>
           </div>
-          {% endif %}
         </div>
       </details>
+      {% else %}
+      <a class="post-accordion post-link {% if post.extra.featured %}featured{% endif %}" href="{{ post.permalink }}">
+        <div class="post-header">
+          <span class="post-title">{{ post.title }}</span>
+          {% if post.description %}
+          <span class="post-description">{{ post.description }}</span>
+          {% endif %}
+          {% if post.taxonomies.tags %}
+          <span class="post-tags">
+            {% for tag in post.taxonomies.tags %}
+            <span class="tag">#{{ tag }}</span>
+            {% endfor %}
+          </span>
+          {% endif %}
+        </div>
+      </a>
+      {% endif %}
       {% endfor %}
     </div>
   </main>

@@ -56,47 +56,79 @@
     --detail-border-color: var(--primary-color);
   }
 
-  /* Override avatar to be rectangular with original dimensions */
+  /* Header: small rectangular avatar beside name/tagline/social */
+  body.homepage #info {
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.2em;
+  }
+
+  body.homepage #info #text {
+    gap: 0.5em;
+  }
+
   body.homepage #info img {
     border-radius: 0 !important;
     width: auto !important;
     height: auto !important;
-    max-height: 250px !important;
+    max-height: 96px !important;
     object-fit: contain !important;
   }
 
-  /* Updates section styling */
+  /* Updates rendered as a scrollable terminal changelog */
   #updates {
-    margin-top: 2em;
+    margin-top: 2.5em;
+    padding: 0 15px;
   }
 
   #updates h3 {
-    margin-bottom: 0.75em;
-    font-size: 1rem;
+    margin-bottom: 0.9em;
+    font-family: var(--code-font);
+    font-size: 0.95rem;
+    font-weight: 500;
     color: var(--text-pale-color);
+    letter-spacing: 0.02em;
+  }
+
+  #updates h3::before {
+    content: "$ ";
+    color: var(--primary-color);
   }
 
   .updates-container {
+    font-family: var(--code-font);
+    font-size: 0.85rem;
+    line-height: 1.6;
     max-height: 180px;
     overflow-y: auto;
-    padding-right: 10px;
+    padding-right: 8px;
+  }
+
+  .updates-container::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .updates-container::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .updates-container::-webkit-scrollbar-thumb {
+    background: var(--text-decoration-color);
+    border-radius: 2px;
   }
 
   .update-item {
     display: flex;
-    gap: 1em;
-    padding: 0.5em 0;
-    border-bottom: 1px solid var(--text-decoration-color);
-  }
-
-  .update-item:last-child {
-    border-bottom: none;
+    gap: 1.25em;
+    padding: 0.32em 0;
+    align-items: baseline;
   }
 
   .update-date {
-    color: var(--text-pale-color);
-    font-size: 0.9em;
+    color: var(--primary-color);
+    min-width: 4.5em;
     white-space: nowrap;
+    opacity: 0.9;
   }
 
   .update-text {
@@ -106,25 +138,40 @@
   .update-text a {
     color: var(--primary-color);
     text-decoration: none;
-    border-bottom: 1.5px solid var(--primary-color);
+    border-bottom: 1px solid var(--primary-pale-color);
   }
 
   .update-text a:hover {
-    opacity: 0.8;
+    border-bottom-color: var(--primary-color);
   }
 
-  /* Custom scrollbar styling */
-  .updates-container::-webkit-scrollbar {
-    width: 4px;
+  /* CV / Résumé as a mono line tied to the changelog */
+  #log-docs {
+    font-family: var(--code-font);
+    font-size: 0.82rem;
+    color: var(--text-pale-color);
+    margin-top: 1.3em;
+    padding-top: 1em;
+    border-top: 1px solid var(--text-decoration-color);
   }
 
-  .updates-container::-webkit-scrollbar-track {
-    background: var(--bg-color);
+  #log-docs a {
+    color: var(--primary-color);
+    text-decoration: none;
+    border-bottom: 1px solid var(--primary-pale-color);
   }
 
-  .updates-container::-webkit-scrollbar-thumb {
-    background: var(--text-decoration-color);
-    border-radius: 2px;
+  #log-docs a:hover {
+    border-bottom-color: var(--primary-color);
+  }
+
+  #log-docs .sep {
+    color: var(--text-pale-color);
+  }
+
+  #log-docs .dl {
+    color: var(--primary-color);
+    font-weight: 600;
   }
 
   /* Projects section - stacked layout (image above text) */
@@ -216,15 +263,101 @@
     margin-left: 0;
   }
 
-  /* Bio line breaks */
+  /* Tagline */
   #bio {
     white-space: pre-line;
   }
 
-  /* Landing page name styling */
+  body.homepage #info #bio {
+    color: var(--text-pale-color);
+    font-size: 0.95rem;
+  }
+
+  /* Landing page name */
   body.homepage #name {
     font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
+  /* Social row in the header */
+  body.homepage #info #social {
+    display: flex;
+    align-items: center;
+    gap: 0.7em;
+    margin-top: 0.35em;
+  }
+
+  body.homepage #info #social a,
+  body.homepage #info #social button {
+    color: var(--text-color);
+    line-height: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body.homepage #info #social a:hover,
+  body.homepage #info #social button:hover {
+    color: var(--primary-color);
+  }
+
+  body.homepage #info #social svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* Contents index with dotted leaders */
+  body.homepage #index {
+    display: flex;
+    flex-direction: column;
+    margin: 2.2em 0 2.5em;
+    padding: 0 15px;
+  }
+
+  body.homepage #index a.ix-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75em;
+    padding: 0.72em 0;
+    color: var(--text-color);
+    text-decoration: none;
+    border-top: 1px solid var(--text-decoration-color);
+  }
+
+  body.homepage #index a.ix-row:first-child {
+    border-top: none;
+  }
+
+  body.homepage #index a.ix-row:hover .ix-label {
+    color: var(--primary-color);
+  }
+
+  body.homepage #index .ix-label {
+    font-size: 1.05rem;
     font-weight: 500;
+    white-space: nowrap;
+  }
+
+  body.homepage #index .ix-leader {
+    flex: 1 1 1.5em;
+    min-width: 1.5em;
+    border-bottom: 1px dotted var(--text-decoration-color);
+    transform: translateY(-0.25em);
+  }
+
+  body.homepage #index .ix-desc {
+    color: var(--text-pale-color);
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 480px) {
+    body.homepage #index .ix-desc {
+      display: none;
+    }
   }
 
   /* Hide dates from blog posts */
@@ -333,38 +466,56 @@
     color: var(--primary-color);
   }
 
+  /* Direct-link posts (no external_url): whole entry links to its page */
+  a.post-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /* Pinned theme toggle: fixed top-right, visible while scrolling anywhere.
+     The button is relocated here from the footer/links by _head_extend.html. */
+  #pinned-theme-toggle {
+    position: fixed;
+    top: 0.6rem;
+    left: 0.75rem;
+    z-index: 100;
+  }
+
+  #pinned-theme-toggle #theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7px;
+    border: none;
+    border-radius: 999px;
+    background-color: var(--bg-color);
+    color: var(--text-pale-color);
+    cursor: pointer;
+    line-height: 0;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+    transition: color 0.2s ease;
+  }
+
+  #pinned-theme-toggle #theme-toggle:hover {
+    color: var(--primary-color);
+  }
+
+  #pinned-theme-toggle svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* Scrollspy: highlight the TOC entry for the section currently in view */
+  body.post aside nav a.active {
+    color: var(--primary-color);
+    font-weight: 600;
+  }
+
   /* Featured post styling */
   .post-accordion.featured .post-title::before {
     content: "* ";
     color: var(--primary-color);
-  }
-
-  /* Document links (icon-only, no box) */
-  #doc-links {
-    display: flex;
-    align-items: center;
-    gap: 0.4em;
-    margin-top: 1em;
-    font-size: 0.9rem;
-  }
-
-  #doc-links svg {
-    color: var(--primary-color);
-    flex-shrink: 0;
-  }
-
-  #doc-links .doc-link {
-    color: var(--primary-color);
-    text-decoration: none;
-    transition: opacity 0.2s ease;
-  }
-
-  #doc-links .doc-link:hover {
-    opacity: 0.7;
-  }
-
-  #doc-links .separator {
-    color: var(--text-pale-color);
   }
 
 </style>

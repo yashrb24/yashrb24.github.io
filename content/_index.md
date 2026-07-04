@@ -7,7 +7,7 @@ footer = false
 
 name = "Yash Bhisikar"
 bio = """
-ML researcher and Systems Engineer
+Somewhere between systems programming and machine learning research.
 """
 avatar = "img/yash.jpg"
 
