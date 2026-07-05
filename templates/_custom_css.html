@@ -355,8 +355,18 @@
   }
 
   @media (max-width: 480px) {
-    body.homepage #index .ix-desc {
+    /* Stack the description under the label and drop the dotted leader,
+       so the elaborations stay visible on narrow screens. */
+    body.homepage #index a.ix-row {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.15em;
+    }
+    body.homepage #index .ix-leader {
       display: none;
+    }
+    body.homepage #index .ix-desc {
+      white-space: normal;
     }
   }
 
@@ -478,7 +488,7 @@
   #pinned-theme-toggle {
     position: fixed;
     top: 0.6rem;
-    left: 0.75rem;
+    right: 0.75rem;
     z-index: 100;
   }
 
