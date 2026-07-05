@@ -9,7 +9,7 @@ name = "Yash Bhisikar"
 bio = """
 Somewhere between systems programming and machine learning research.
 """
-avatar = "img/yash.jpg"
+avatar = "img/yash-palace.jpg"
 
 links = [
     { name = "GitHub", icon = "github", url = "https://github.com/yashrb24" },
