@@ -518,4 +518,20 @@
     color: var(--primary-color);
   }
 
+  /* Post figures: render light matplotlib plots on a white card and skip the
+     dark-mode brightness dimming, so pale/low-contrast plots stay legible. */
+  .prose figure img {
+    background: #fff;
+  }
+
+  body.dark .prose figure img {
+    filter: none;
+  }
+
+  /* Let post figures use the full content width (the global 500px cap is for
+     the About section). Plots are high-res, so they stay sharp when enlarged. */
+  body.post .prose figure {
+    max-width: 100%;
+  }
+
 </style>

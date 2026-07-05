@@ -1,10 +1,12 @@
 <style>
-  /* About section - constrain figure images */
+  /* Constrain figure images: cap width but never upscale past native size,
+     so low-resolution plots stay sharp instead of being blown up. */
   figure {
     max-width: 500px;
   }
   figure img {
-    width: 100%;
+    width: auto;
+    max-width: 100%;
     height: auto;
   }
 </style>
