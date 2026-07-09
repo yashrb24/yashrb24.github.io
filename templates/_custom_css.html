@@ -37,9 +37,33 @@
   }
 
   /* typography */
+  @font-face {
+    font-family: "Geist Sans";
+    src: url("/fonts/Geist_Variable.woff2") format("woff2");
+    font-display: swap;
+    font-style: normal;
+    font-weight: 100 900;
+  }
+
+  @font-face {
+    font-family: "Geist Mono";
+    src: url("/fonts/GeistMono_Variable.woff2") format("woff2");
+    font-display: swap;
+    font-style: normal;
+    font-weight: 100 900;
+  }
+
+  @font-face {
+    font-family: "Lora";
+    src: url("/fonts/Lora-Base.woff2") format("woff2");
+    font-display: swap;
+    font-style: normal;
+    font-weight: 400 700;
+  }
+
   body {
-    --main-font: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-    --code-font: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    --main-font: "Geist Sans", ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --code-font: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
     --homepage-max-width: 768px;
     --main-max-width: 768px;
     --avatar-size: 120px;
@@ -54,6 +78,10 @@
     --block-code-border-radius: 0px;
     --block-code-border-color: var(--primary-color);
     --detail-border-color: var(--primary-color);
+  }
+
+  .font-lora {
+    font-family: "Lora", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
   }
 
   /* Header: small rectangular avatar beside name/tagline/social */
