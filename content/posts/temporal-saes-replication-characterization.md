@@ -1,8 +1,7 @@
 +++
-title = "What does the temporal objective in Temporal SAEs learn? A replication and characterization"
+title = "[draft] What does the temporal objective in Temporal SAEs learn? A replication and characterization"
 description = "A replication of the Temporal Sparse Autoencoder and a characterization of what its contrastive objective changes, when it helps, and where its boundaries are"
 date = 2026-07-19
-draft = true
 
 [taxonomies]
 tags = ["interpretability", "ai-safety", "sparse-autoencoders", "machine-learning"]
